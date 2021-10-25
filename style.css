@@ -90,7 +90,7 @@ body{
     width: 100%;
     padding: 1rem 3rem;
     font-size: 1rem;
-    background-color: var(--gray-2);
+    background-color: var(--gray);
     border-radius: 0.5rem;
     border: 0.125rem solid var(--white);
     outline: none;
