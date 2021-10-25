@@ -54,3 +54,25 @@ body{
 .flex-col{
     flex-direction: column;
 }
+
+.form-wrapper{
+    width: 100%;
+    max-width: 28rem;
+}
+
+.form{
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    /* transform: scale(); */
+    transition: 500ms ease-in-out;
+    transition-delay: 1s;
+}
+
+.input-group{
+    position: relative;
+    width: 100%;
+    margin: 1rem 0;
+}
