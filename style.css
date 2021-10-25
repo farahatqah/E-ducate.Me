@@ -93,4 +93,5 @@ body{
     background-color: var(--gray-2);
     border-radius: 0.5rem;
     border: 0.125rem solid var(--white);
+    outline: none;
 }
