@@ -1,13 +1,15 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyCGWqdA7qfKOnOBEuo_08nG7YUZM54znTI",
-    authDomain: "e-ducate-me.firebaseapp.com",
-    projectId: "e-ducate-me",
-    storageBucket: "e-ducate-me.appspot.com",
-    messagingSenderId: "354977666843",
-    appId: "1:354977666843:web:c799cf49ed43c013be25be",
-    measurementId: "G-7EXJMT3JM0"
-  };
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const container = document.getElementById('container');
+const signIn = document.getElementById('sign-in');
+const signUp = document.getElementById('sign-up');
 
+setTimeout(() => {
+  container.classList.add('sign-in');
+},200);
+
+const toggle = () => {
+  container.classList.toggle('sign-in');
+  container.classList.toggle('sign-up');
+};
+
+signIn.addEventListener("click",toggle);
+signUp.addEventListener("click",toggle);
