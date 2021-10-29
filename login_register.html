@@ -17,23 +17,23 @@
             <!-- Sign-up -->
             <div class="col align-center flex-col sign-up">
                 <div class="form-wrapper align-center">
-                    <form class="form sign-up">
+                    <form class="form sign-up" id="signup-form">
                         <div class="input-group">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Username" name="username" id="username">
+                            <input type="text" placeholder="Username" name="username" id="username" required>
                         </div>
                         <div class="input-group">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" placeholder="Email" id="email">
+                            <input type="email" placeholder="Email" id="signup-email" required>
                         </div>
                         <div class="input-group">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" id="password">
+                            <input type="password" placeholder="Password" id="signup-password" required>
                         </div>
-                        <div class="input-group">
+                        <!-- <div class="input-group">
                             <i class="fas fa-lock"></i>
                             <input type="password" placeholder="Confirm password">
-                        </div>
+                        </div> -->
                         <button>Sign up</button>
                         <p>
                             <span>Already have an account?</span>
@@ -62,11 +62,11 @@
                     <form class="form sign-in">
                         <div class="input-group">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Username" name="username" id="username">
+                            <input type="text" placeholder="Email" name="email" id="signin-email" required>
                         </div>
                         <div class="input-group">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" id="password">
+                            <input type="password" placeholder="Password" id="siginin-password" required>
                         </div>
                         <button>Sign in</button>
                         <p>
@@ -126,6 +126,11 @@
             </div>
         </div>
     </div>
-    <script src="index.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/auth.js"></script>
 </body>
 </html>
