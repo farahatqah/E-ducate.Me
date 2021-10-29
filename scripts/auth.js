@@ -31,13 +31,8 @@ signupForm.addEventListener('submit', (e) => {
         console.log(cred.user);
         signupForm.reset();
     })
-
     alert("Your account has been created! Go to Sign-In page")
 })
-
-
-
-
 
 
 
