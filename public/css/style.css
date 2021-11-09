@@ -40,6 +40,28 @@ html{
     width: 200px;
 }
 
+.navbar ul{
+    list-style: none;
+}
+
+.navbar ul li{
+    position: relative;
+    float: left;
+}
+
+.navbar ul li a{
+    padding: 1.5rem;
+    display: block;
+    font-size: 1rem;
+    color: var(--purple);
+}
+
+.navbar ul li a:hover{
+    color: var(--pink);
+}
+
+
+
 body{
     font-family: 'Poppins', sans-serif;
     height: 100vh;
