@@ -5,6 +5,7 @@
     --gray-2: #757575;
     --purple:#7B3C9F;
     --pink:#E66BBA;
+    --blue: #3B3086;
 
     --google-color: #db4437;
     --facebook-color: #4267b2;
@@ -60,7 +61,12 @@ html{
     color: var(--pink);
 }
 
-
+#menu-btn{
+    cursor: pointer;
+    color: var(--purple);
+    font-size: 1rem;
+    display: none;
+}
 
 body{
     font-family: 'Poppins', sans-serif;
@@ -303,8 +309,8 @@ body{
     transform: translate(35%, 0);
     background-image: linear-gradient(
         -45deg,
-        var(--pink) 0%,
-        var(--purple) 100%
+        var(--purple) 0%,
+        var(--pink) 100%
     );
     transition: 1s ease-in-out;
     z-index: 6;
@@ -328,7 +334,24 @@ b#sign-up {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 996px){
+@media only screen and (max-width: 1080px){
+    #menu-btn{
+        display: inline-block;
+    } 
+
+    .header{
+        padding: 2rem;
+    }
+
+    .navbar{
+        position:absolute;
+        top: 99%; left: 0; right: 0;
+    }
+
+    .navbar ul li{
+        width: 100%;
+    }
+    
     .img.sign-in img {
         width: 37vw;
     }
@@ -343,6 +366,16 @@ b#sign-up {
 }
 
 @media only screen and (max-width: 567px){
+    .header{
+        padding-left: 1rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .header img{
+        display: inline-block;
+    }
+    
     .container::before,
     .container.sign-in::before,
     .container.sign-up::before {
