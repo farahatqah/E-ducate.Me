@@ -16,23 +16,65 @@ const db = firebase.firestore();
 //update firestore settings
 db.settings({ timestampsInSnapshots: true });
 
+
+//listen for auth status change
+auth.onAuthStateChanged(user => {
+    if (user){
+        console.log('user logged in: ', user);
+    }
+    else {
+        console.log('user logged out');
+    }
+});
+
+
 // Sign-up
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     // get user info
-    const userId = signupForm['username'].value;
     const email = signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value;
 
     // sign up the user
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        console.log(cred.user);
         signupForm.reset();
     })
     alert("Your account has been created! Go to Sign-In page")
 })
+
+//logout
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', (e) => {
+    e.preventDefault();
+    auth.signOut();
+});
+
+//login
+const loginForm = document.querySelector('#signin-form');
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    //get user info
+    const email = loginForm['signin-email'].value;
+    const password = loginForm['signin-password'].value;
+
+    auth.signInWithEmailAndPassword(email, password).then(cred => {
+        //reset the form
+        loginForm.reset();
+    })
+})
+
+
+
+
+
+
+
+
+
+
 
 
 
