@@ -151,67 +151,10 @@ header input{
     flex-direction: row;
 }
 
-<<<<<<< HEAD
 .footer .box-container .box h3{
     font-size: 1.3rem;
     padding: 1rem 0;
     color: var(--blue);
-=======
-.container-register{
-  margin: auto;
-  margin-top: 50px;
-  max-width: 700px;
-  width: 100%;
-  background-color: #fff;
-  padding: 25px 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-}
-.container-register .title{
-    font-size: 25px;
-    font-weight: 700;
-    position: relative;
-    text-align: center;
-}
-
-  .content form .user-details{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 0 12px 0;
-  }
-  form .user-details .input-box, form .user-details .file-box{
-    margin-bottom: 15px;
-    width: calc(100% / 2 - 20px);
-  }
-  form .input-box span.details, form .file-box span.details {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-  }
-  .user-details .input-box input, .user-details .input-box select {
-    height: 45px;
-    width: 100%;
-    outline: none;
-    font-size: 16px;
-    border-radius: 5px;
-    padding-left: 15px;
-    border: 1px solid #ccc;
-    border-bottom-width: 2px;
-    transition: all 0.3s ease;
-  }
- 
-form .button{
-   height: 45px;
-   margin: 35px 0
- }
-
-
-.row{
-    display: flex;
-    flex-wrap: wrap;
-    height:100vh;
->>>>>>> c957dc32dd101385ecc1e9c301fb66915cb4a06c
 }
 
 .footer .box-container .box a{
@@ -248,6 +191,11 @@ form .button{
 
 /*footer style ends*/
 
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    height:100vh;
+}
 
 .form-wrapper{
     width: 100%;
@@ -481,6 +429,7 @@ b#sign-up {
 }
 
 /*home style starts*/
+
 .home{
     display: flex;
     align-items: center;
@@ -515,6 +464,7 @@ b#sign-up {
     margin-bottom: 1rem;
     line-height: 2;
 }
+
 /*home style ends*/
 
 /* feature style starts */
@@ -560,6 +510,60 @@ b#sign-up {
 }
 
 /* features style ends */
+
+/*tutor job style starts*/
+
+.container-register{ 
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  }
+  .container-register .title{
+      font-size: 25px;
+      font-weight: 700;
+      position: relative;
+      text-align: center;
+  }
+  
+  .content form .user-details{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0 12px 0;
+  }
+  form .user-details .input-box, form .user-details .file-box{
+      margin-bottom: 15px;
+      width: calc(100% / 2 - 20px);
+  }
+  form .input-box span.details, form .file-box span.details {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+  }
+  .user-details .input-box input, .user-details .input-box select {
+      height: 45px;
+      width: 100%;
+      outline: none;
+      font-size: 16px;
+      border-radius: 5px;
+      padding-left: 15px;
+      border: 1px solid #ccc;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+  }
+   
+  form .button{
+     height: 45px;
+     margin: 35px 0
+   }
+
+  /*tutor job style ends*/
 
 @media only screen and (max-width: 1080px){
     .header label{
