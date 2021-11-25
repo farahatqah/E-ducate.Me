@@ -1,3 +1,4 @@
+// sign-up and sign-in page
 const container = document.getElementById('container');
 const signIn = document.getElementById('sign-in');
 const signUp = document.getElementById('sign-up');
