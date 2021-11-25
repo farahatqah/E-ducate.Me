@@ -59,6 +59,7 @@ section{
     position: relative;
     min-height: 100vh;
     overflow: hidden;
+    margin-bottom: 0.5em;
 }
 
 .row{
