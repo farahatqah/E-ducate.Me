@@ -21,11 +21,24 @@
         <!-- navigation bar -->
         <nav class="navbar">
             <ul>
-                <li><a href="index.html">Home</a></li> 
-                <li><a href="ourTutors.html">Our Tutors</a></li>
-                <li><a href="apply-tutor.html">Apply Tutor Job</a></li>
-                <li><a href="aboutUs.html">About Us</a></li>
-                <li><a href="loginRegister.html">Login/Register</a></li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li> 
+                <li>
+                    <a href="ourTutors.html">Our Tutors</a>
+                </li>
+                <li class="logged-in">
+                    <a href="apply-tutor.html">Apply Tutor Job</a>
+                </li>
+                <li class="logged-in">
+                    <a href="studentProfile.html">My Profile</a>
+                </li>
+                <li class="logged-in" id="logout">
+                    <a href="index.html">Logout</a>
+                </li>
+                <li class="logged-out">
+                    <a href="loginRegister.html">Login/Register</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -43,17 +56,22 @@
                 <div class="image-icon">
                     <img src="images/profile-icon.png" id="photo">
                 </div>
-
                 <input type="file" id="file">
                 <label for="file" id="uploadBtn" >Choose Photo</label>
+                
+                <ul class="display-details">
+
+                </ul>
             </div>
 
             <div class="profile-box">
-                hello
+                <form action="">
+                    
+                </form>
             </div>
 
             <div class="profile-box">
-                hello
+                
             </div>
         </div>
         

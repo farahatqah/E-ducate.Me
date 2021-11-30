@@ -16,13 +16,14 @@ const db = firebase.firestore();
 //update firestore settings
 db.settings({ timestampsInSnapshots: true });
 
-
 //listen for auth status change
 auth.onAuthStateChanged(user => {
     if (user){
+        setupUI(user);
         console.log('user logged in: ', user);
     }
     else {
+        setupUI();
         console.log('user logged out');
     }
 });
@@ -63,9 +64,9 @@ loginForm.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password).then(cred => {
         //reset the form
         loginForm.reset();
+        
     })
 })
-
 
 
 
