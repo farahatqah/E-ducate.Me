@@ -1,5 +1,27 @@
 {
   "hosting": {
+    "redirect": [
+      {
+        "source": "/homepage",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/my-profile",
+        "destination": "/studentProfile.html",
+        "type": 301
+      },
+      {
+        "source": "/apply-tutor",
+        "destination": "/apply-tutor.html",
+        "type": 301
+      },
+      {
+        "source": "/our-tutors",
+        "destination": "/ourTutors.html",
+        "type": 301
+      }
+    ],
     "public": "public",
     "ignore": [
       "firebase.json",
