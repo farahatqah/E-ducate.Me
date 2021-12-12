@@ -64,7 +64,6 @@ loginForm.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password).then(cred => {
         //reset the form
         loginForm.reset();
-        
     })
 })
 

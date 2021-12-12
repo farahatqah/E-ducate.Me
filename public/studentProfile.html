@@ -52,21 +52,48 @@
             <p><a href="index.html">Home</a> / <a href="studentProfile.html">My Profile</a></p>
         </div>
         <div class="learner-container">
-            <div class="profile-box">
+            <div class="profile-box flex-col">
+
                 <div class="image-icon">
                     <img src="images/profile-icon.png" id="photo">
                 </div>
-                <input type="file" id="file">
-                <label for="file" id="uploadBtn" >Choose Photo</label>
-                
-                <ul class="display-details">
 
-                </ul>
+                <div class="upload-picture">
+                    <input type="file" id="file" class="file-photo">
+                    <label for="file" id="uploadBtn">Choose Photo</label>
+                </div>
+
             </div>
 
-            <div class="profile-box">
-                <form action="">
-                    
+            <div class="profile-box2">
+                <form action="" class="form-details">
+                    <div class="input-details flex-col">
+                        <label>Name</label>
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="input-details flex-col">
+                        <label>Age</label>
+                        <input type="number" placeholder="Age">
+                    </div>
+                    <div class="input-details flex-col">
+                        <label>School</label>
+                        <input type="text" placeholder="School">
+                    </div>
+                    <div class="input-details flex-col">
+                        <label>Email</label>
+                        <input type="text" placeholder="Email">
+                    </div>
+                    <div class="input-details flex-col">
+                        <label>Contact No.</label>
+                        <input type="text" placeholder="Contact Number">
+                    </div>
+                    <div class="input-details flex-col">
+                        <label>Guardian Contact No.</label>
+                        <input type="text" placeholder="Contact Number">
+                    </div>
+                    <div class="update-btn align-center">
+                        <button>Update</button>
+                    </div>
                 </form>
             </div>
 
@@ -75,7 +102,41 @@
             </div>
         </div>
         
-        <div class="student-class">
+        <div class="student-class align-center flex-col">
+
+            <h2>Class Enrolled</h2>
+
+            <div class="class-enrolled align-center">
+                <div class="class-details">
+                    <ul>
+                        <li class="subject">Mathematics</li>
+                        <li class="teacher"> Teacher Izzul Ismail</li>
+                        <li class="date-time">Mon & Wed / 8pm - 10 pm</li>
+                    </ul>
+                </div>
+                <div class="class-buttons">
+                    <button class="view-class">View</button>
+                    <button class="rate-feedback">Rate & Feedback</button>
+                    <button class="payment-fee">Pay Fee</button>
+                    <button class="unenroll-class">Unenroll</button>
+                </div>
+            </div>
+
+            <div class="class-enrolled align-center">
+                <div class="class-details">
+                    <ul>
+                        <li class="subject">Science</li>
+                        <li class="teacher"> Teacher Ibrahim</li>
+                        <li class="date-time">Mon & Wed / 8pm - 10 pm</li>
+                    </ul>
+                </div>
+                <div class="class-buttons">
+                    <button class="view-class">View</button>
+                    <button class="rate-feedback">Rate & Feedback</button>
+                    <button class="payment-fee">Pay Fee</button>
+                    <button class="unenroll-class">Unenroll</button>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -117,6 +178,7 @@
 
     </section>
     <!-- footer section ends -->
+    
     <!-- javascript files -->
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
