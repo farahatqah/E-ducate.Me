@@ -15,6 +15,42 @@ const toggle = () => {
 signIn.addEventListener("click",toggle);
 signUp.addEventListener("click",toggle);
 
+//navbar show and hide
+$('#auth-nav').on('click', function() {
+  $('#login-register').show();
+  $('#home-section').hide();
+  $('#tutor-section').hide();
+  $('#student-profile').hide();
+});
+
+$('#home-nav').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').show();
+  $('#tutor-section').hide();
+  $('#student-profile').hide();
+});
+
+$('#logo-click').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').show();
+  $('#tutor-section').hide();
+  $('#student-profile').hide();
+});
+
+$('#tutor-nav').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').hide();
+  $('#tutor-section').show();
+  $('#student-profile').hide();
+});
+
+$('#profile-nav').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').hide();
+  $('#tutor-section').hide();
+  $('#student-profile').show();
+});
+
 //navbar when logged in and logged out
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
@@ -31,3 +67,13 @@ const setupUI = (user) => {
     loggedOutLinks.forEach(item => item.style.display = 'block');
   }
 }
+
+//accordian list display
+const accordianItemHeaders = document.querySelectorAll(".accordian-header");
+
+accordianItemHeaders.forEach(accordianItemHeader => {
+accordianItemHeader.addEventListener("click", event => {
+    accordianItemHeader.classList.toggle("active");
+});
+});
+
