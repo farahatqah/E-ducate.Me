@@ -102,6 +102,64 @@ section{
     font-size: .8rem;
 }
 
+/* pop up style starts */
+.modal-container{
+    background-color: rgba(0, 0, 0, 0.35);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.modal-container.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal{
+    background-color: var(--white);
+    width: 30rem;
+    padding: 2rem;
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn{
+    position:relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn i{
+    cursor: pointer;
+}
+
+.modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.modal-header h1{
+    font-size: 1.2rem;
+    color: var(--purple);
+}
+
+.input-details .req{
+    margin: .5rem 1rem;
+    width: 90%;
+}
+
+/* pop up style ends */
+
 /*header style starts*/
 .header{
     position: sticky;
@@ -685,7 +743,6 @@ form .input-box span.details, form .file-box span.details {
 .input-details input {
     padding: .5rem;
     font-family: "Poppins";
-    border-radius: .5rem;
     background-color: var(--gray);
     border-radius: 0.5rem;
     border: 0.125rem solid var(--white);
@@ -694,6 +751,16 @@ form .input-box span.details, form .file-box span.details {
 
 .input-details input:focus{
     border: 0.125rem solid var(--pink);
+}
+
+.input-details p {
+    padding: .5rem;
+    color: var(--gray-3);
+    font-size: .8rem;
+    font-family: "Poppins";
+    border-radius: .5rem;
+    background-color: var(--gray);
+    outline: none;
 }
 
 .update-btn{

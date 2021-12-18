@@ -23,7 +23,7 @@
                 <li>
                     <a href="#home-section" id="home-nav">Home</a>
                 </li> 
-                <li>
+                <li class="logged-in">
                     <a href="#tutor-section" id="tutor-nav">Our Tutors</a>
                 </li>
                 <li class="logged-out">
@@ -61,6 +61,15 @@
                                 <i class="fas fa-lock"></i>
                                 <input type="password" placeholder="Password" id="signup-password" required>
                             </div>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Name" id="signup-name" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-phone-alt"></i>
+                                <input type="text" placeholder="Contact No" id="signup-phoneNo" required>
+                            </div>
+
                             <button>Sign up</button>
                             <p>
                                 <span>Already have an account?</span>
@@ -183,7 +192,7 @@
             </div>
     
             <div class="category">
-                <a href="ourTutors.html" class="box">
+                <a href="#tutor-section" id="tutor-category" class="box">
                     <img src="images/features 2.png" alt="">
                     <h3>Our Tutors</h3>
                     <p>Our tutors could provide you with some great
@@ -212,7 +221,7 @@
     <section class="tutorList" id="tutor-section">
 
         <div class="link">
-            <p><a href="index.html">Home</a> / <a href="ourTutors.html">Our Tutors</a></p>
+            <p><a href="#home-section" id="home-link">Home</a> / <a href="#tutor-section">Our Tutors</a></p>
         </div>
 
         <!-- filter search starts -->
@@ -265,7 +274,7 @@
                 </div>
                 
                 <div class="request-btn">
-                    <button class="request-tutor-btn">Request</button>
+                    <button class="request-tutor-btn" id="open">Request</button>
                 </div>
 
             </div>
@@ -319,12 +328,12 @@
                 <div class="tutor-details-request">
 
                     <div class="tutor-img">
-                        <img src="images/tutor-image-example.jpg" alt="">
+                        <img src="images/profileicon2.png" alt="">
                     </div>
 
                     <div class="tutor-name-rating">
 
-                        <h3>Izzul Ismail bin Ibrahim</h3>
+                        <h3>Siti Norbalqis</h3>
 
                         <div class="star-rating">
                             <span class="fa fa-star checked"></span>
@@ -339,7 +348,7 @@
                 </div>
                 
                 <div class="request-btn">
-                    <button class="request-tutor-btn">Request</button>
+                    <button class="request-tutor-btn" id="open">Request</button>
                 </div>
 
             </div>
@@ -385,7 +394,25 @@
             </div>
         </div>
         <!-- tutor list display ends -->
-        
+        <div class="modal-container" id="modal-container">
+            <div class="modal">
+                <div class="close-btn">
+                    <i id="close" class="fas fa-times"></i>    
+                </div>
+                <div class="modal-header">
+                    <h1>Request Tutor</h1>
+                </div>
+                <form action="" class="input-details flex-col align-center">
+                    <input class="req" type="text" placeholder="Name">
+                    <input class="req" type="text" placeholder="Subject">
+                    <input class="req" type="text" placeholder="Day">
+                    <input class="req" type="time" >
+                    <div class="request-btn">
+                        <button>Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
     <!-- tutor list section ends -->
 
@@ -410,39 +437,27 @@
             </div>
     
             <div class="profile-box2">
-                <form action="" class="form-details">
-                    <div class="input-details flex-col">
-                        <label>Name</label>
-                        <input type="text" placeholder="Name">
-                    </div>
-                    <div class="input-details flex-col">
-                        <label>Age</label>
-                        <input type="number" placeholder="Age">
-                    </div>
-                    <div class="input-details flex-col">
-                        <label>School</label>
-                        <input type="text" placeholder="School">
-                    </div>
+                <div class="form-details">
                     <div class="input-details flex-col">
                         <label>Email</label>
-                        <input type="text" placeholder="Email">
+                        <p class="studentEmail"></p>    
+                    </div>
+                    <div class="input-details flex-col">
+                        <label>Name</label>
+                        <p class="studentName"></p>    
                     </div>
                     <div class="input-details flex-col">
                         <label>Contact No.</label>
-                        <input type="text" placeholder="Contact Number">
-                    </div>
-                    <div class="input-details flex-col">
-                        <label>Guardian Contact No.</label>
-                        <input type="text" placeholder="Contact Number">
+                        <p class="studentPhoneNo"></p>    
                     </div>
                     <div class="update-btn align-center">
-                        <button>Update</button>
+                        <button id="update">Update</button>
                     </div>
-                </form>
+                </div>
             </div>
     
             <div class="profile-box">
-                    
+                
             </div>
         </div>
             

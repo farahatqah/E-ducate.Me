@@ -37,6 +37,20 @@ $('#logo-click').on('click', function() {
   $('#student-profile').hide();
 });
 
+$('#home-link').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').show();
+  $('#tutor-section').hide();
+  $('#student-profile').hide();
+});
+
+$('#tutor-category').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').hide();
+  $('#tutor-section').show();
+  $('#student-profile').hide();
+});
+
 $('#tutor-nav').on('click', function() {
   $('#login-register').hide();
   $('#home-section').hide();
@@ -54,14 +68,27 @@ $('#profile-nav').on('click', function() {
 //navbar when logged in and logged out
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
+const studentEmail = document.querySelector('.studentEmail');
+const studentName = document.querySelector('.studentName');
+const studentContactNo = document.querySelector('.studentPhoneNo');
 
 const setupUI = (user) => {
   if (user) {
+    db.collection('studentProfile').doc(user.uid).get().then(doc =>{
+      //account info
+      const email = `<p>${user.email}</p>`;
+      const name = `<p>${doc.data().studentName}</p>`;
+      const contactNo = `<p>${doc.data().studentContactNo}</p>`;
+      studentEmail.innerHTML = email;
+      studentName.innerHTML = name;
+      studentContactNo.innerHTML = contactNo;
+    })
     //toggle UI elements
     loggedInLinks.forEach(item => item.style.display = 'block');
     loggedOutLinks.forEach(item => item.style.display = 'none');
   }
   else {
+    studentEmail.innerHTML = '';
     //toggle UI elements
     loggedInLinks.forEach(item => item.style.display = 'none');
     loggedOutLinks.forEach(item => item.style.display = 'block');
@@ -77,3 +104,15 @@ accordianItemHeader.addEventListener("click", event => {
 });
 });
 
+//popup functions
+const open = document.getElementById('open');
+const modal_container = document.getElementById('modal-container');
+const close = document.getElementById('close');
+
+open.addEventListener('click', () => {
+  modal_container.classList.add('show');
+});
+
+close.addEventListener('click', () => {
+  modal_container.classList.remove('show');
+});

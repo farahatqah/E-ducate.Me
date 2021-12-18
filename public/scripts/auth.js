@@ -12,6 +12,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
+const user = firebase.auth().currentUser;
 
 //update firestore settings
 db.settings({ timestampsInSnapshots: true });
@@ -40,9 +41,14 @@ signupForm.addEventListener('submit', (e) => {
 
     // sign up the user
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
+        return db.collection('studentProfile').doc(cred.user.uid).set({
+            studentName: signupForm['signup-name'].value,
+            studentContactNo: signupForm['signup-phoneNo'].value
+        });
+    }).then(() => {
         signupForm.reset();
-    })
-    alert("Your account has been created! Go to Sign-In page")
+        alert("Your account has been created! Go to Sign-In page")
+    });
 })
 
 //logout
@@ -66,69 +72,3 @@ loginForm.addEventListener('submit', (e) => {
         loginForm.reset();
     })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function signUpForm(){
-//     var email = document.getElementById("signup-email");
-//     var password = document.getElementById("signup-password");
-
-//     const promise = auth.createUserWithEmailAndPassword(email.value,password.value);
-//     //
-//     promise.catch(e=>alert(e.message));
-//     alert("Sign Up Successfully");
-//   }
-
-// //signIN function
-// function  signInForm(){
-//     var email = document.getElementById("signin-email");
-//     var password  = document.getElementById("siginin-password");
-//     const promise = auth.signInWithEmailAndPassword(email.value,password.value);
-//     promise.catch(e=>alert(e.message));
-// }
-
-// //signOut
-// function signOut(){
-//     auth.signOut();
-//     alert("SignOut Successfully from System");
-// }
-
-// firebase.auth().onAuthStateChanged((user)=>{
-//     if(user){
-//       var email = user.email;
-//       alert("Hye "+email+" Welcome to E-duacte.me :) ");
-
-//     }else{
-//       alert("No Active user Found")
-//     }
-//   })
