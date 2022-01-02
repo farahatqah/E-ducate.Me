@@ -17,6 +17,17 @@ const user = firebase.auth().currentUser;
 //update firestore settings
 db.settings({ timestampsInSnapshots: true });
 
+//get data
+db.collection('TutorRegistration').get().then(snapshot => {
+    setupTutor(snapshot.docs);
+    snapshot.docs.forEach(doc => {
+        db.collection('TutorRegistration').doc(doc.id).collection('RateFeedback').get().then(snapshot => {
+                ratefeedback(snapshot.docs);
+        });
+    });
+});
+
+
 //listen for auth status change
 auth.onAuthStateChanged(user => {
     if (user){
@@ -28,7 +39,6 @@ auth.onAuthStateChanged(user => {
         console.log('user logged out');
     }
 });
-
 
 // Sign-up
 const signupForm = document.querySelector('#signup-form');
@@ -70,5 +80,6 @@ loginForm.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password).then(cred => {
         //reset the form
         loginForm.reset();
+        alert("You are signed in!")
     })
 })
