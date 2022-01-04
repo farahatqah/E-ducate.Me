@@ -320,10 +320,10 @@
             </div> -->
     
         </div>
-        <!-- <div class="feedbackpart">
 
+        <!-- <div class="feedback">
+            
         </div> -->
-
         
         <!-- popup request tutor -->
         <div class="modal" id="modal1">
@@ -335,7 +335,7 @@
                 <div class="modal-body">
                     <form action="" class="request-tutor-form">
                         <label for="name">Your Name</label>
-                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Name" id="studName">
 
                         <label for="Subject">Subject</label>
                         <select name="SubjectList" id="subject">
@@ -344,11 +344,11 @@
                             <option value="Science">Science</option>
                         </select>
 
-                        <label for="date">Date</label>
-                        <input type="text" placeholder="Date">
+                        <label for="date">Day</label>
+                        <input type="text" placeholder="Day" id="choosenDay">
 
                         <label for="time">Time</label>
-                        <input type="time">
+                        <input type="time" id="choosenTime">
 
                         <button>Submit Request</button>
                     </form>
@@ -364,7 +364,7 @@
     <section class="profile" id="student-profile">
 
         <div class="link">
-            <p><a href="index.html">Home</a> / <a href="studentProfile.html">My Profile</a></p>
+            <p><a href="index.html">Home</a> / <a href="#studentProfile">My Profile</a></p>
         </div>
         <div class="learner-container">
             <div class="profile-box flex-col">
@@ -410,10 +410,10 @@
                     <div class="modal-body">
                         <form action="" class="updateDetails-form">
                             <label for="name">Your Name</label>
-                            <input type="text" placeholder="Name">
+                            <input type="text" placeholder="Name" id="name" required>
     
                             <label for="contactNo">Contact Number</label>
-                            <input type="number" placeholder="Contact number">
+                            <input type="number" placeholder="Contact number" id="contactNo" required>
     
                             <button>Update Profile</button>
                         </form>
@@ -477,7 +477,7 @@
                         </select>
 
                         <label for="feedback">Feedback</label>
-                        <textarea name="feedback" id="comment" cols="30" rows="10" placeholder="Type your comment here..."></textarea>
+                        <textarea resize="none" name="feedback" id="comment" cols="30" rows="10" placeholder="Type your comment here..."></textarea>
 
                         <button>Submit</button>
                     </form>
@@ -531,6 +531,28 @@
 
     </section>
     <!-- profile section ends -->
+
+    <!-- teaching material section starts -->
+    <section class="teachingMaterials">
+
+        <div class="link">
+            <p><a href="index.html">Home</a> / <a href="#studentProfile">My Profile</a> / <a href="#teachingMaterials">Teaching Materials</a></p>
+        </div>
+        <div class="tmHeader align-center flex-col">
+            <h2>Teaching Materials</h2>
+        </div>
+
+        <div class="teachMatbox align-center ">
+
+            <p>date</p>
+            <p>topic</p>
+            <p>notes</p>
+            <p>exercise</p>
+
+        </div>
+    
+    </section>
+    <!-- teaching material section ends -->
 
     <!-- footer section starts -->
     <section class="footer">

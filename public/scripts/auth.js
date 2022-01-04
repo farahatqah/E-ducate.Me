@@ -31,6 +31,8 @@ db.collection('TutorRegistration').get().then(snapshot => {
 //listen for auth status change
 auth.onAuthStateChanged(user => {
     if (user){
+        updateDetails(user);
+        requestTutor(user);
         setupUI(user);
         console.log('user logged in: ', user);
     }
@@ -39,7 +41,6 @@ auth.onAuthStateChanged(user => {
         console.log('user logged out');
     }
 });
-
 // Sign-up
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {

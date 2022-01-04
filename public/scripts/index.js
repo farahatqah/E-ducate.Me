@@ -72,6 +72,30 @@ const studentEmail = document.querySelector('.studentEmail');
 const studentName = document.querySelector('.studentName');
 const studentContactNo = document.querySelector('.studentPhoneNo');
 
+const updateDetails = (user) => {
+  if(user){
+    const updDetailsForm = document.querySelector('.updateDetails-form');
+  
+        updDetailsForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            db.collection('studentProfile').doc(user.uid).update({
+
+              studentName: updDetailsForm['name'].value,
+              studentContactNo: updDetailsForm['contactNo'].value
+             
+            }).then(() => {
+                updDetailsForm.reset();
+                document.location.reload(true);
+                alert("Your details have been updated!")
+            }).catch(err => {
+              console.log(err);
+            });
+            
+        });
+  }
+
+}
+
 const setupUI = (user) => {
   if (user) {
     db.collection('studentProfile').doc(user.uid).get().then(doc =>{
@@ -97,31 +121,6 @@ const setupUI = (user) => {
     loggedOutLinks.forEach(item => item.style.display = 'block');
   }
 }
-
-//accordian list display
-const accordianItemHeaders = document.querySelectorAll(".accordian-header");
-
-accordianItemHeaders.forEach(accordianItemHeader => {
-  accordianItemHeader.addEventListener("click", event => {
-      accordianItemHeader.classList.toggle("active");
-  });
-});
-
-//popup function
-var modalBtns = document.querySelectorAll(".modal-open");
-modalBtns.forEach(function(btn){
-  btn.onclick = function(){
-    var modal = btn.getAttribute("data-modal");
-    document.getElementById(modal).style.display = "block";
-  };
-});
-
-var closeBtns = document.querySelectorAll('.modal-close');
-closeBtns.forEach(function(btn){
-  btn.onclick = function() {
-    var modal = btn.closest(".modal").style.display="none";
-  };
-});
 
 //setup tutor display
 const tutorList = document.querySelector('.display-tutor');
@@ -154,21 +153,24 @@ const setupTutor = (data) => {
 
         <div class="accordian-body">
           <div class="first-col">
-              <div class="subjects">
-                  <h3>Teaching Subjects</h3>
-                  <li>${tutor.teachingSubj}</li>
-              </div>
-              <div class="qualification">
-                  <h3>Highest Education</h3>
-                  <li>${tutor.eduBackground}</li>
-              </div>
-              
+            <div class="subjects">
+              <h3>Teaching Subjects</h3>
+              <li>${tutor.teachingSubj}</li>
+            </div>
+            <div class="qualification">
+                <h3>Highest Education</h3>
+                <li>${tutor.eduBackground}</li>
+            </div>
+            <div class="feedback">
+              <h3>Feedback</h3>
+
+            </div>
           </div>
           <div class="divider"></div>
           <div class="second-col">
               <div class="fees">
                   <h3>Fee per month</h3>
-                  <li>RM 200</li>
+                  <li>${tutor.paymentFee}</li>
               </div>
               <div class="schedule">
                   <h3>Available Schedule</h3>
@@ -188,12 +190,35 @@ const setupTutor = (data) => {
 
   });
   tutorList.innerHTML = html;
+
+  //popup function
+  var modalBtns = document.querySelectorAll(".modal-open");
+  modalBtns.forEach(function(btn){
+    btn.onclick = function(){
+      var modal = btn.getAttribute("data-modal");
+      document.getElementById(modal).style.display = "block";
+    };
+  });
+
+  var closeBtns = document.querySelectorAll('.modal-close');
+  closeBtns.forEach(function(btn){
+    btn.onclick = function() {
+      var modal = btn.closest(".modal").style.display="none";
+    };
+  });
+
+  //accordian list display
+  const accordianItemHeaders = document.querySelectorAll(".accordian-header");
+
+  accordianItemHeaders.forEach(accordianItemHeader => {
+    accordianItemHeader.addEventListener("click", event => {
+        accordianItemHeader.classList.toggle("active");
+    });
+  });
   // console.log(tutorList)
 }
 
-
-//comment display
-const commentList = document.querySelector('.feedbackpart');
+const commentList = document.querySelector('.feedback');
 
 const ratefeedback = (data) => {
   let display = '';
@@ -201,7 +226,25 @@ const ratefeedback = (data) => {
     const fb = doc.data();
     const li = `<li>${fb.comment}</li>`;
     display += li
+    console.log(display)
   });
-  commentList.innerHTML = display;
+  commentList.innerHTML = display;  
+}
+
+//request tutor form
+
+const requestTutor = (user) => {
+  if(user){
+    const requestTutorForm = document.querySelector('.request-tutor-form');
+
+    requestTutorForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      db.collection('TutorRegistration').get().then(snapshot => {
+        
+      });
+
+    }); 
+  }
 }
 //search bar function

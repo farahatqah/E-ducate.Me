@@ -689,6 +689,7 @@ form .input-box span.details, form .file-box span.details {
     border-radius: 0.5rem;
     border: 0.125rem solid var(--white);
     outline: none;
+    cursor: text;
 }
 
 .input-details input:focus{
@@ -871,11 +872,12 @@ form .input-box span.details, form .file-box span.details {
     align-items: center;
     justify-content: space-between;
     position: relative;
+    cursor: pointer;
 }
 
-/* .accordian-header.active + .accordian-body{
+.accordian-header.active + .accordian-body{
     display: flex;
-} */
+}
 
 .tutor-details-request{
     display: flex;
@@ -920,7 +922,7 @@ form .input-box span.details, form .file-box span.details {
 }
 
 .accordian-body{
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     border-top: 3px solid var(--gray);
 }
@@ -1151,7 +1153,8 @@ form .input-box span.details, form .file-box span.details {
 
 .rateFeedback-form textarea,
 .unenroll-form textarea
-{
+{   
+    resize: none;
     padding: .5rem;
     background-color: var(--gray);
     border: 0;
@@ -1163,7 +1166,25 @@ form .input-box span.details, form .file-box span.details {
 
 /*  popup style ends */
 
+/* teaching material style starts */
+.tmHeader{
+    margin: 1rem;
+    padding: .5rem;
+}
 
+.tmHeader h2{
+    color: var(--purple);
+    font-size: 1.2rem;
+}
+.teachMatBox{
+    box-shadow: 0px 5px 15px rgba(129, 68, 68, 0.35);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    justify-content: space-between;
+}
+
+/* teaching material style ends */
 @media only screen and (max-width: 1080px){
     .header label{
         display: inline-block;
