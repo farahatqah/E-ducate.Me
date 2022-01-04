@@ -31,9 +31,9 @@ db.collection('TutorRegistration').get().then(snapshot => {
 //listen for auth status change
 auth.onAuthStateChanged(user => {
     if (user){
+        setupUI(user);
         updateDetails(user);
         requestTutor(user);
-        setupUI(user);
         console.log('user logged in: ', user);
     }
     else {

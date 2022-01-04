@@ -15,55 +15,89 @@ const toggle = () => {
 signIn.addEventListener("click",toggle);
 signUp.addEventListener("click",toggle);
 
-// // navbar show and hide
-// $('#auth-nav').on('click', function() {
-//   $('#login-register').show();
-//   $('#home-section').hide();
-//   $('#tutor-section').hide();
-//   $('#student-profile').hide();
-// });
+// navbar show and hide
+$('#auth-nav').on('click', function() {
+  $('#login-register').show();
+  $('#home-section').hide();
+  $('#tutor-section').hide();
+  $('#student-profile').hide();
+  $('#teachMaterial-section').hide();
 
-// $('#home-nav').on('click', function() {
-//   $('#login-register').hide();
-//   $('#home-section').show();
-//   $('#tutor-section').hide();
-//   $('#student-profile').hide();
-// });
+});
 
-// $('#logo-click').on('click', function() {
-//   $('#login-register').hide();
-//   $('#home-section').show();
-//   $('#tutor-section').hide();
-//   $('#student-profile').hide();
-// });
+$('#home-nav').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').show();
+  $('#tutor-section').hide();
+  $('#student-profile').hide();
+  $('#teachMaterial-section').hide();
+});
 
-// $('#home-link').on('click', function() {
-//   $('#login-register').hide();
-//   $('#home-section').show();
-//   $('#tutor-section').hide();
-//   $('#student-profile').hide();
-// });
+$('#logo-click').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').show();
+  $('#tutor-section').hide();
+  $('#student-profile').hide();
+  $('#teachMaterial-section').hide();
+});
 
-// $('#tutor-category').on('click', function() {
-//   $('#login-register').hide();
-//   $('#home-section').hide();
-//   $('#tutor-section').show();
-//   $('#student-profile').hide();
-// });
+$('#home-link').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').show();
+  $('#tutor-section').hide();
+  $('#student-profile').hide();
+  $('#teachMaterial-section').hide();
+});
 
-// $('#tutor-nav').on('click', function() {
-//   $('#login-register').hide();
-//   $('#home-section').hide();
-//   $('#tutor-section').show();
-//   $('#student-profile').hide();
-// });
+$('#logout-nav').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').show();
+  $('#tutor-section').hide();
+  $('#student-profile').hide();
+  $('#teachMaterial-section').hide();
+});
 
-// $('#profile-nav').on('click', function() {
-//   $('#login-register').hide();
-//   $('#home-section').hide();
-//   $('#tutor-section').hide();
-//   $('#student-profile').show();
-// });
+
+$('#after-signin').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').show();
+  $('#tutor-section').hide();
+  $('#student-profile').hide();
+  $('#teachMaterial-section').hide();
+});
+
+
+$('#tutor-category').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').hide();
+  $('#tutor-section').show();
+  $('#student-profile').hide();
+  $('#teachMaterial-section').hide();
+});
+
+$('#tutor-nav').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').hide();
+  $('#tutor-section').show();
+  $('#student-profile').hide();
+  $('#teachMaterial-section').hide();
+});
+
+$('#profile-nav').on('click', function() {
+  $('#login-register').hide();
+  $('#home-section').hide();
+  $('#tutor-section').hide();
+  $('#student-profile').show();
+  $('#teachMaterial-section').hide();
+});
+
+$('#viewTeachMat').on('click', function(){
+  $('#login-register').hide();
+  $('#home-section').hide();
+  $('#tutor-section').hide();
+  $('#student-profile').hide();
+  $('#teachMaterial-section').show();
+})
 
 //navbar when logged in and logged out
 const loggedOutLinks = document.querySelectorAll('.logged-out');
@@ -218,22 +252,21 @@ const setupTutor = (data) => {
   // console.log(tutorList)
 }
 
-const commentList = document.querySelector('.feedback');
+// const commentList = document.querySelector('.feedback');
 
-const ratefeedback = (data) => {
-  let display = '';
-  data.forEach(doc => {
-    const fb = doc.data();
-    const li = `<li>${fb.comment}</li>`;
-    display += li
-    console.log(display)
-  });
-  commentList.innerHTML = display;  
-}
+// const ratefeedback = (data) => {
+//   let display = '';
+//   data.forEach(doc => {
+//     const fb = doc.data();
+//     const li = `<li>${fb.comment}</li>`;
+//     display += li
+//     console.log(display)
+//   });
+//   commentList.innerHTML = display;  
+// }
 
 //request tutor form
-
-const requestTutor = (user) => {
+requestTutor = (user) => {
   if(user){
     const requestTutorForm = document.querySelector('.request-tutor-form');
 
@@ -241,10 +274,37 @@ const requestTutor = (user) => {
       e.preventDefault();
       
       db.collection('TutorRegistration').get().then(snapshot => {
-        
+        snapshot.docs.forEach(doc => {
+          db.collection('TutorRegistration').doc(doc.id).collection('StudentRequest').add({
+            studName: requestTutorForm['studName'].value,
+            subject: requestTutorForm['subject'].value,
+            day: requestTutorForm['choosenDay'].value,
+            time: requestTutorForm['choosenTime'].value
+          }).then(()=> {
+            requestTutorForm.reset();
+          }).catch(err => {
+            console.log(err);
+          });
+        });
       });
-
     }); 
+
+    const teacher_name = document.querySelector('.teacher');
+    const teach_subj = document.querySelector('.subject');
+
+    db.collection('TutorRegistration').get().then(snapshot => {
+      snapshot.docs.forEach(doc => {
+        const teacherName = `<li>Teacher ${doc.data().tutorName}</li>`;
+        const teachingsubj = `<li>${doc.data().teachingSubj}</li>`;
+        teacher_name.innerHTML = teacherName;
+        teach_subj.innerHTML = teachingsubj;
+      })
+    })
+  
+  }
+  else{
+
   }
 }
+
 //search bar function

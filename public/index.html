@@ -32,7 +32,7 @@
                     <a href="#student-profile" id="profile-nav">My Profile</a>
                 </li>
                 <li class="logged-in" id="logout">
-                    <a href="#home-section">Logout</a>
+                    <a href="#home-section" id="logout-nav">Logout</a>
                 </li>
                 <li class="logged-out">
                     <a href="#login-register" id="auth-nav">Login/Register</a>
@@ -444,13 +444,12 @@
             <div class="class-enrolled align-center">
                 <div class="class-details">
                     <ul>
-                        <li class="subject">Mathematics</li>
-                        <li class="teacher"> Teacher Ibrahim</li>
-                        <li class="date-time">Mon & Wed / 8pm - 10 pm</li>
+                        <li class="subject"></li>
+                        <li class="teacher"></li>
                     </ul>
                 </div>
                 <div class="class-buttons">
-                    <button class="view-class">View</button>
+                    <button class="view-class" id="viewTeachMat">View</button>
                     <button class="modal-open rate-feedback" data-modal="modal3">Rate & Feedback</button>
                     <button class="modal-open payment-fee" data-modal="modal4">Pay Fee</button>
                     <button class="modal-open unenroll-class" data-modal="modal5">Unenroll</button>
@@ -533,7 +532,7 @@
     <!-- profile section ends -->
 
     <!-- teaching material section starts -->
-    <section class="teachingMaterials">
+    <section class="teachingMaterials" id="teachMaterial-section">
 
         <div class="link">
             <p><a href="index.html">Home</a> / <a href="#studentProfile">My Profile</a> / <a href="#teachingMaterials">Teaching Materials</a></p>
