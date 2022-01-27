@@ -3,17 +3,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-ducate.Me | Homepage</title>
+    <title>E-ducate.Me</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
-    <script src="https://kit.fontawesome.com/1036134b61.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
     <!-- header section starts -->
     <header class="header">
         <!-- e-ducate-me logo -->
-        <a href="index.html" class="logo"><img src="images/Full Logo2.png"></a>
+        <a href="#home-section" id="logo-click" class="logo"><img src="images/Full Logo2.png"></a>
         
         <input type="checkbox" id="menu-bar">
         <label for="menu-bar" class="fas fa-bars"></label>
@@ -21,70 +19,539 @@
         <!-- navigation bar -->
         <nav class="navbar">
             <ul>
-                <li><a href="index.html">Home</a></li> 
-                <li><a href="ourTutors.html">Our Tutors</a></li>
-                <li><a href="apply-tutor.html">Apply Tutor Job</a></li>
-                <li><a href="aboutUs.html">About Us</a></li>
-                <li><a href="loginRegister.html">Login/Register</a></li>
+                <li>
+                    <a href="#home-section" id="home-nav">Home</a>
+                </li> 
+                <li class="logged-in">
+                    <a href="#tutor-section" id="tutor-nav">Our Tutors</a>
+                </li>
+                <li class="logged-out">
+                    <a href="apply-tutor.html">Apply Tutor Job</a>
+                </li>
+                <li class="logged-in">
+                    <a href="#student-profile" id="profile-nav">My Profile</a>
+                </li>
+                <li class="logged-in" id="logout">
+                    <a href="#home-section" id="logout-nav">Logout</a>
+                </li>
+                <li class="logged-out">
+                    <a href="#login-register" id="auth-nav">Login/Register</a>
+                </li>
             </ul>
         </nav>
     </header>
     <!-- header section ends -->
+    
+    <!-- login register section starts -->
+    <section id="login-register">
+        <!-- container -->
+        <div class="container" id="container">
+            <!-- Row -->
+            <div class="row">
+                <!-- Sign-up -->
+                <div class="col align-center flex-col sign-up">
+                    <div class="form-wrapper align-center">
+                        <form class="form sign-up" id="signup-form">
+                            <div class="input-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" placeholder="Email" id="signup-email" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Password" id="signup-password" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Name" id="signup-name" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-phone-alt"></i>
+                                <input type="text" placeholder="Contact No" id="signup-phoneNo" required>
+                            </div>
+
+                            <button>Sign up</button>
+                            <p>
+                                <span>Already have an account?</span>
+                                <b id="sign-in">Sign in here</b>
+                            </p>
+                        </form>
+                    </div>
+    
+                    <!-- Social Wrapper -->
+                    <div class="form-wrapper">
+                        <div class="social-list align-center sign-up">
+                            <div class="align-center google-bg">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <div class="align-center facebook-bg">
+                                <i class="fab fa-facebook"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Sign-Up -->
+    
+                <!-- Sign In -->
+                <div class="col align-center flex-col sign-in" id="modal-signin">
+                    <div class="form-wrapper align-center">
+                        <form class="form sign-in" id="signin-form">
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Email" name="email" id="signin-email" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Password" id="signin-password" required>
+                            </div>
+                            <button>Sign in</button>
+                            <p>
+                                <b>Forgot password?</b>
+                            </p>
+                            <p>
+                                <span>Don't have an account?</span>
+                                <b id="sign-up">Sign up here</b>
+                            </p>
+                        </form>
+                    </div>
+    
+                    <!-- Social Wrapper -->
+                    <div class="form-wrapper">
+                        <div class="social-list align-center sign-in">
+                            <div class="align-center google-bg">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <div class="align-center facebook-bg">
+                                <i class="fab fa-facebook"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Row -->
+    
+            <!-- Content Section -->
+            <div class="row content-row">
+                <!-- Sign In content -->
+                <div class="col align-center flex-col">
+                    <div class="text sign-in">
+                        <h2>Welcome Back</h2>
+                        <p>
+                            Log in to your account now. Know more about the updates on classes 
+                            you have enrolled. Don't forget to rate the tutor as we are 
+                            providing quality educators to you all!  
+                        </p>
+                    </div>
+                    <div class="sign-in img">
+                        <img src="images/image1.png" alt="">
+                    </div>
+                </div>
+                <!-- Sign Up Content -->
+                <div class="col align-center flex-col">
+                    <div class="text sign-up">
+                        <h2>Register Now</h2>
+                        <p>
+                            Create your account now and find the best tutor for the subject 
+                            you would like to request for! We serve you the best of the best.
+                        </p>
+                    </div>
+                    <div class="sign-up img">
+                        <img src="images/image3.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    <!-- login register section ends -->
 
     <!-- home section starts -->
-    <section class="home">
+    <section class="home" id="home-section">
 
-        <div class="image">
-            <img src="images/home.png" alt="">
+        <div class="home-content">
+
+            <div class="image">
+                <img src="images/home.png" alt="">
+            </div>
+    
+            <div class="content">
+                <h3>E-Ducate.Me: <span> <br>Searching Online Tutor</span></h3>
+                <p>
+                    We are providing you platform to search for tutor online 
+                    specifically for students in their secondary school. 
+                    We serve you the best of the best!
+                </p>
+                <a href="#cat" class="btn">Get Started</a>
+            </div>
+    
         </div>
 
-        <div class="content">
-            <h3>E-Ducate.Me: <span> <br>Searching Online Tutor</span></h3>
-            <p>
-                We are providing you platform to search for tutor online 
-                specifically for students in their secondary school. 
-                We serve you the best of the best!
-            </p>
-            <a href="#cat" class="btn">Get Started</a>
+        <div class="features" id="cat">
+            <div class="title">
+                <h2>Features</h2>
+            </div>
+    
+            <div class="category">
+                <a href="#tutor-section" id="tutor-category" class="box">
+                    <img src="images/features 2.png" alt="">
+                    <h3>Our Tutors</h3>
+                    <p>Our tutors could provide you with some great
+                        tips and tricks in scoring their examination.
+                        Search your tutor now!
+                    </p>
+                </a>
+        
+                <a href="apply-tutor.html" class="box">
+                    <img src="images/features 1.png" alt="">
+                    <h3>Tutor Job</h3>
+                    <p>Wanna be a tutor and be an expert in teaching? Worry 
+                        not! Click here now and fill 
+                        in your necessary details. 
+                    </p>
+                </a>
+    
+            </div>
+    
         </div>
-
+        
     </section>
     <!-- home section ends -->
 
-    <!-- features section starts -->
+    <!-- tutor list section starts -->
+    <section class="tutorList" id="tutor-section">
 
-    <section class="features" id="#cat">
-        
-        <div class="title">
-            <h2>Features</h2>
+        <div class="link">
+            <p><a href="#home-section" id="home-link">Home</a> / <a href="#tutor-section">Our Tutors</a></p>
         </div>
 
-        <div class="category">
-        <a href="#" class="box">
-            <img src="images/features 2.png" alt="">
-            <h3>Our Tutors</h3>
-            <p>Our tutors came from different states in Malaysia 
-                that are teaching one or multiple SPM subjects. We 
-                assure you that they are able to teach the students 
-                with great tips and tricks in scoring their examination
-            </p>
-        </a>
+        <!-- filter search starts -->
+        <div class="filter-section">
+            <h2>Our Tutors</h2>
+            <form autocomplete="off" action="" class="filter-form">
+                <div class="autocomplete">
+                    <input type="text" id="myInput" name="Subject" placeholder="Subject">
+                </div>
+                <div class="search-btn">
+                    <button>Search</button>
+                </div>
+            </form>
+        </div>
+        <!-- filter search ends -->
 
-        <a href="#" class="box">
-            <img src="images/features 1.png" alt="">
-            <h3>Tutor Job</h3>
-            <p>Wanna be a tutor? Worry not! Click here now
-                and fill in your necessary details. To make sure you are applicable 
-                for the job, we might refer back to your previous 
-                institute based on your education background
-            </p>
-        </a>
+        <!-- tutor list display starts -->
+        <div class="display-tutor">
 
+            <!-- <div class="accordian-list">
+
+                <div class="accordian-header">
+    
+                    <div class="tutor-details-request">
+    
+                        <div class="tutor-img">
+                            <img src="images/profileicon2.png" alt="">
+                        </div>
+    
+                        <div class="tutor-name-rating">
+    
+                            <h3>Nur Farah Atiqah</h3>
+    
+                            <div class="star-rating">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                        
+                </div>
+    
+                <div class="accordian-body">
+                    
+                    <div class="first-col">
+    
+                        <div class="subjects">
+                            <h3>Teaching Subjects</h3>
+                            <li>Mathematics</li>
+                            <li>English</li>
+                        </div>
+    
+                        <div class="qualification">
+                            <h3>Highest Education</h3>
+                            <li>Bachelor Degree of Information Technology</li>
+                        </div>
+                            
+                        <div class="feedback">
+                            <h3>Feedback</h3>
+    
+                            <li>"Thank you for your hardwork in supporting my daughter as they develop.
+                                Your patience and commitment to supporting my child had mean a lot to our family"
+                            </li>
+                            <li>"Your expertise in teaching has put our minds at ease. Thank you!"</li>
+                        </div>
+        
+                    </div>
+                    
+                    <div class="divider"></div>
+    
+                    <div class="second-col">
+    
+                        <div class="fees">
+                            <h3>Fee per month</h3>
+                            <li>RM 200</li>
+                        </div>
+    
+                        <div class="schedule">
+                            <h3>Available Schedule</h3>
+                            <li>Tuesday</li>
+                            <li>Thursday</li>
+                            <li>Friday</li>
+                        </div>
+    
+                        <div class="request-tutor-btn">
+                            <button class="btn modal-open" data-modal="modal1">Request Tutor</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div> -->
+    
+        </div>
+
+        <!-- <div class="feedback">
+            
+        </div> -->
+        
+        <!-- popup request tutor -->
+        <div class="modal" id="modal1">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Request Tutor</h3>
+                    <button class="modal-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="request-tutor-form">
+                        <label for="name">Your Name</label>
+                        <input type="text" placeholder="Name" id="studName">
+
+                        <label for="Subject">Subject</label>
+                        <select name="SubjectList" id="subject">
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="English">English</option>
+                            <option value="Science">Science</option>
+                        </select>
+
+                        <label for="date">Day</label>
+                        <input type="text" placeholder="Day" id="choosenDay">
+
+                        <label for="time">Time</label>
+                        <input type="time" id="choosenTime">
+
+                        <button>Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- tutor list display ends -->
+    </section>
+    <!-- tutor list section ends -->
+
+    <!-- profile section starts -->
+    <section class="profile" id="student-profile">
+
+        <div class="link">
+            <p><a href="index.html">Home</a> / <a href="#studentProfile">My Profile</a></p>
+        </div>
+        <div class="learner-container">
+            <div class="profile-box flex-col">
+    
+                <div class="image-icon">
+                    <img src="images/profile-icon.png" id="photo">
+                </div>
+    
+                <div class="upload-picture">
+                     <input type="file" id="file" class="file-photo">
+                     <label for="file" id="uploadBtn">Choose Photo</label>
+                 </div>
+    
+            </div>
+    
+            <div class="profile-box2">
+                <div class="form-details">
+                    <div class="input-details flex-col">
+                        <label>Email</label>
+                        <p class="studentEmail"></p>    
+                    </div>
+                    <div class="input-details flex-col">
+                        <label>Name</label>
+                        <p class="studentName"></p>    
+                    </div>
+                    <div class="input-details flex-col">
+                        <label>Contact No.</label>
+                        <p class="studentPhoneNo"></p>    
+                    </div>
+                    <div class="update-btn align-center">
+                        <button class="modal-open" id="update" data-modal="modal2">Update</button>
+                    </div>
+                </div>
+            </div> 
+
+            <!-- popup to edit profile -->
+            <div class="modal" id="modal2">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Edit Details</h3>
+                        <button class="modal-close"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="updateDetails-form">
+                            <label for="name">Your Name</label>
+                            <input type="text" placeholder="Name" id="name" required>
+    
+                            <label for="contactNo">Contact Number</label>
+                            <input type="number" placeholder="Contact number" id="contactNo" required>
+    
+                            <button>Update Profile</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="table" class="profile-box flex-col">
+                <!-- Calendar Part -->
+                    <div class="card">
+                        <h2>Today</h2> <br>
+                        <div class="calendar">
+                            <div class="calendar-body">
+                                <span class="month-name">Month</span>
+                                <span class="day-name">Day</span>
+                                <span class="date-number">00</span>
+                                <span class="year">0000</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="student-class align-center flex-col">
+    
+            <h2>Class Enrolled</h2>
+    
+            <div class="class-enrolled align-center">
+                <div class="class-details">
+                    <ul>
+                        <li class="subject"></li>
+                        <li class="teacher"></li>
+                    </ul>
+                </div>
+                <div class="class-buttons">
+                    <button class="view-class" id="viewTeachMat">View</button>
+                    <button class="modal-open rate-feedback" data-modal="modal3">Rate & Feedback</button>
+                    <button class="modal-open payment-fee" data-modal="modal4">Pay Fee</button>
+                    <button class="modal-open unenroll-class" data-modal="modal5">Unenroll</button>
+                </div>
+            </div>    
+        </div>
+
+        <!-- popup to rate and comment tutor -->
+        <div class="modal" id="modal3">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Rate & Feedback</h3>
+                    <button class="modal-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="rateFeedback-form">
+                        <label for="rate">Rate</label>
+                        <select name="rate" id="rating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+
+                        <label for="feedback">Feedback</label>
+                        <textarea resize="none" name="feedback" id="comment" cols="30" rows="10" placeholder="Type your comment here..."></textarea>
+
+                        <button>Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- popup payment -->
+        <div class="modal" id="modal4">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Make Payment</h3>
+                    <button class="modal-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="payment-form">
+                        <label for="card-holder">Card Holder</label>
+                        <input type="text" name="card-holder-name" placeholder="Name">
+
+                        <label for="card-number">Card Number</label>
+                        <input type="text" name="card-holder-name" placeholder="Card Number" data-mask="0000 0000 0000 0000">
+
+                        <label for="expdate">Expiry Date</label>
+                        <input type="text" name="expdate" placeholder="00 / 00" data-mask="00 / 00">
+
+                        <label for="card-cvv">CVV</label>
+                        <input type="text" name="card-cvv" placeholder="000" data-mask="000">
+
+                        <button>Pay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- popup unenroll class -->
+        <div class="modal" id="modal5">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Unenroll Class</h3>
+                    <button class="modal-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="unenroll-form">
+                        <label for="feedback">Reason</label>
+                        <textarea name="feedback" cols="30" rows="10" placeholder="Tell us your reason here..."></textarea>
+                        <button>Confirm</button>
+                    </form>
+                </div>
+            </div>
         </div>
 
     </section>
+    <!-- profile section ends -->
 
-    <!-- features section ends -->
+    <!-- teaching material section starts -->
+    <section class="teachingMaterials" id="teachMaterial-section">
+
+        <div class="link">
+            <p><a href="index.html">Home</a> / <a href="#studentProfile">My Profile</a> / <a href="#teachingMaterials">Teaching Materials</a></p>
+        </div>
+        <div class="tmHeader align-center flex-col">
+            <h2>Teaching Materials</h2>
+        </div>
+
+        <div class="teachMatbox align-center ">
+
+            <p>date</p>
+            <p>topic</p>
+            <p>notes</p>
+            <p>exercise</p>
+
+        </div>
+    
+    </section>
+    <!-- teaching material section ends -->
 
     <!-- footer section starts -->
     <section class="footer">
@@ -121,7 +588,24 @@
 
     </section>
     <!-- footer section ends -->
+
     <!-- javascript files -->
+
+    <!-- javascript files for calendar -->
+    <script type="text/javascript">
+    const dayNumber = new Date().getDate();
+    const year = new Date().getFullYear();
+    const dayName = new Date().toLocaleString("default", {weekday: "long"});
+    const monthName = new Date().toLocaleString("default", {month: "long"});
+
+    document.querySelector(".month-name").innerHTML = monthName;
+    document.querySelector(".day-name").innerHTML = dayName;
+    document.querySelector(".date-number").innerHTML = dayNumber;
+    document.querySelector(".year").innerHTML = year;
+    </script>
+    <script src="https://kit.fontawesome.com/1036134b61.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
