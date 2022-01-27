@@ -20,146 +20,145 @@
         <nav class="navbar">
             <ul>
                 <li>
-                    <a href="#home-section" id="home-nav">Home</a>
+                    <a href="#home-section" data-link id="home-nav">Home</a>
                 </li> 
                 <li class="logged-in">
-                    <a href="#tutor-section" id="tutor-nav">Our Tutors</a>
+                    <a href="#tutor-section" data-link id="tutor-nav">Our Tutors</a>
                 </li>
                 <li class="logged-out">
-                    <a href="apply-tutor.html">Apply Tutor Job</a>
+                    <a href="https://e-ducate-me-tutor.web.app/">Apply Tutor Job</a>
                 </li>
                 <li class="logged-in">
-                    <a href="#student-profile" id="profile-nav">My Profile</a>
+                    <a href="#student-profile" data-link id="profile-nav">My Profile</a>
                 </li>
                 <li class="logged-in" id="logout">
                     <a href="#home-section" id="logout-nav">Logout</a>
                 </li>
                 <li class="logged-out">
-                    <a href="#login-register" id="auth-nav">Login/Register</a>
+                    <a href="#login-register" data-link id="auth-nav">Login/Register</a>
                 </li>
             </ul>
         </nav>
     </header>
     <!-- header section ends -->
-    
     <!-- login register section starts -->
     <section id="login-register">
         <!-- container -->
-        <div class="container" id="container">
-            <!-- Row -->
-            <div class="row">
-                <!-- Sign-up -->
-                <div class="col align-center flex-col sign-up">
-                    <div class="form-wrapper align-center">
-                        <form class="form sign-up" id="signup-form">
-                            <div class="input-group">
-                                <i class="fas fa-envelope"></i>
-                                <input type="email" placeholder="Email" id="signup-email" required>
-                            </div>
-                            <div class="input-group">
-                                <i class="fas fa-lock"></i>
-                                <input type="password" placeholder="Password" id="signup-password" required>
-                            </div>
-                            <div class="input-group">
-                                <i class="fas fa-user"></i>
-                                <input type="text" placeholder="Name" id="signup-name" required>
-                            </div>
-                            <div class="input-group">
-                                <i class="fas fa-phone-alt"></i>
-                                <input type="text" placeholder="Contact No" id="signup-phoneNo" required>
-                            </div>
+            <div class="container" id="container">
+                <!-- Row -->
+                <div class="row">
+                    <!-- Sign-up -->
+                    <div class="col align-center flex-col sign-up">
+                        <div class="form-wrapper align-center">
+                            <form class="form sign-up" id="signup-form">
+                                <div class="input-group">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" placeholder="Email" id="signup-email" required>
+                                </div>
+                                <div class="input-group">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" placeholder="Password" id="signup-password" required>
+                                </div>
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" placeholder="Name" id="signup-name" required>
+                                </div>
+                                <div class="input-group">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <input type="text" placeholder="Contact No" id="signup-phoneNo" required>
+                                </div>
 
-                            <button>Sign up</button>
-                            <p>
-                                <span>Already have an account?</span>
-                                <b id="sign-in">Sign in here</b>
-                            </p>
-                        </form>
-                    </div>
-    
-                    <!-- Social Wrapper -->
-                    <div class="form-wrapper">
-                        <div class="social-list align-center sign-up">
-                            <div class="align-center google-bg">
-                                <i class="fab fa-google"></i>
+                                <button>Sign up</button>
+                                <p>
+                                    <span>Already have an account?</span>
+                                    <b id="sign-in">Sign in here</b>
+                                </p>
+                            </form>
+                        </div>
+        
+                        <!-- Social Wrapper -->
+                        <div class="form-wrapper">
+                            <div class="social-list align-center sign-up">
+                                <div class="align-center google-bg">
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <div class="align-center facebook-bg">
+                                    <i class="fab fa-facebook"></i>
+                                </div>
                             </div>
-                            <div class="align-center facebook-bg">
-                                <i class="fab fa-facebook"></i>
+                        </div>
+                    </div>
+                    <!-- End Sign-Up -->
+        
+                    <!-- Sign In -->
+                    <div class="col align-center flex-col sign-in" id="modal-signin">
+                        <div class="form-wrapper align-center">
+                            <form class="form sign-in" id="signin-form">
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" placeholder="Email" name="email" id="signin-email" required>
+                                </div>
+                                <div class="input-group">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" placeholder="Password" id="signin-password" required>
+                                </div>
+                                <button>Sign in</button>
+                                <p>
+                                    <b>Forgot password?</b>
+                                </p>
+                                <p>
+                                    <span>Don't have an account?</span>
+                                    <b id="sign-up">Sign up here</b>
+                                </p>
+                            </form>
+                        </div>
+        
+                        <!-- Social Wrapper -->
+                        <div class="form-wrapper">
+                            <div class="social-list align-center sign-in">
+                                <div class="align-center google-bg">
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <div class="align-center facebook-bg">
+                                    <i class="fab fa-facebook"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- End Sign-Up -->
-    
-                <!-- Sign In -->
-                <div class="col align-center flex-col sign-in" id="modal-signin">
-                    <div class="form-wrapper align-center">
-                        <form class="form sign-in" id="signin-form">
-                            <div class="input-group">
-                                <i class="fas fa-user"></i>
-                                <input type="text" placeholder="Email" name="email" id="signin-email" required>
-                            </div>
-                            <div class="input-group">
-                                <i class="fas fa-lock"></i>
-                                <input type="password" placeholder="Password" id="signin-password" required>
-                            </div>
-                            <button>Sign in</button>
+                <!-- End Row -->
+        
+                <!-- Content Section -->
+                <div class="row content-row">
+                    <!-- Sign In content -->
+                    <div class="col align-center flex-col">
+                        <div class="text sign-in">
+                            <h2>Welcome Back</h2>
                             <p>
-                                <b>Forgot password?</b>
+                                Log in to your account now. Know more about the updates on classes 
+                                you have enrolled. Don't forget to rate the tutor as we are 
+                                providing quality educators to you all!  
                             </p>
-                            <p>
-                                <span>Don't have an account?</span>
-                                <b id="sign-up">Sign up here</b>
-                            </p>
-                        </form>
+                        </div>
+                        <div class="sign-in img">
+                            <img src="images/image1.png" alt="">
+                        </div>
                     </div>
-    
-                    <!-- Social Wrapper -->
-                    <div class="form-wrapper">
-                        <div class="social-list align-center sign-in">
-                            <div class="align-center google-bg">
-                                <i class="fab fa-google"></i>
-                            </div>
-                            <div class="align-center facebook-bg">
-                                <i class="fab fa-facebook"></i>
-                            </div>
+                    <!-- Sign Up Content -->
+                    <div class="col align-center flex-col">
+                        <div class="text sign-up">
+                            <h2>Register Now</h2>
+                            <p>
+                                Create your account now and find the best tutor for the subject 
+                                you would like to request for! We serve you the best of the best.
+                            </p>
+                        </div>
+                        <div class="sign-up img">
+                            <img src="images/image3.png" alt="">
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End Row -->
-    
-            <!-- Content Section -->
-            <div class="row content-row">
-                <!-- Sign In content -->
-                <div class="col align-center flex-col">
-                    <div class="text sign-in">
-                        <h2>Welcome Back</h2>
-                        <p>
-                            Log in to your account now. Know more about the updates on classes 
-                            you have enrolled. Don't forget to rate the tutor as we are 
-                            providing quality educators to you all!  
-                        </p>
-                    </div>
-                    <div class="sign-in img">
-                        <img src="images/image1.png" alt="">
-                    </div>
-                </div>
-                <!-- Sign Up Content -->
-                <div class="col align-center flex-col">
-                    <div class="text sign-up">
-                        <h2>Register Now</h2>
-                        <p>
-                            Create your account now and find the best tutor for the subject 
-                            you would like to request for! We serve you the best of the best.
-                        </p>
-                    </div>
-                    <div class="sign-up img">
-                        <img src="images/image3.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
     
     </section>
     <!-- login register section ends -->
@@ -212,9 +211,8 @@
             </div>
     
         </div>
-        
-    </section>
-    <!-- home section ends -->
+    
+    </section>    <!-- home section ends -->
 
     <!-- tutor list section starts -->
     <section class="tutorList" id="tutor-section">
@@ -321,9 +319,6 @@
     
         </div>
 
-        <!-- <div class="feedback">
-            
-        </div> -->
         
         <!-- popup request tutor -->
         <div class="modal" id="modal1">
@@ -333,7 +328,7 @@
                     <button class="modal-close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form action="" class="request-tutor-form">
+                    <form action="POST" class="request-tutor-form">
                         <label for="name">Your Name</label>
                         <input type="text" placeholder="Name" id="studName">
 
@@ -369,19 +364,19 @@
         <div class="learner-container">
             <div class="profile-box flex-col">
     
-                <div class="image-icon">
+                <div class="image-icon">                  
                     <img src="images/profile-icon.png" id="photo">
                 </div>
     
                 <div class="upload-picture">
-                     <input type="file" id="file" class="file-photo">
+                     <input type="file" id="file" class="file-photo" onchange="chooseFile(event)">
                      <label for="file" id="uploadBtn">Choose Photo</label>
                  </div>
     
             </div>
     
             <div class="profile-box2">
-                <div class="form-details">
+                <div class="user-details">
                     <div class="input-details flex-col">
                         <label>Email</label>
                         <p class="studentEmail"></p>    
@@ -424,7 +419,7 @@
             <div id="table" class="profile-box flex-col">
                 <!-- Calendar Part -->
                     <div class="card">
-                        <h2>Today</h2> <br>
+                        <h2>My Calendar</h2> <br>
                         <div class="calendar">
                             <div class="calendar-body">
                                 <span class="month-name">Month</span>
@@ -541,13 +536,21 @@
             <h2>Teaching Materials</h2>
         </div>
 
-        <div class="teachMatbox align-center ">
+        <div class="teach-Materials-sections align-center">
 
-            <p>date</p>
-            <p>topic</p>
-            <p>notes</p>
-            <p>exercise</p>
-
+            <table class="list" id="listClass">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Topic</th>
+                  <th>Notes</th>
+                  <th>Exercise</th>
+                </tr>
+              </thead>
+              <tbody>
+    
+              </tbody>
+            </table>
         </div>
     
     </section>
@@ -590,7 +593,6 @@
     <!-- footer section ends -->
 
     <!-- javascript files -->
-
     <!-- javascript files for calendar -->
     <script type="text/javascript">
     const dayNumber = new Date().getDate();
@@ -608,6 +610,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/auth.js"></script>
