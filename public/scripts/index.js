@@ -162,7 +162,7 @@ const setupUI = (user) => {
 const tutorList = document.querySelector('.display-tutor');
 
 const setupTutor = (data) => {
-  
+
   let html = '';
   
   data.forEach(doc => {
@@ -201,7 +201,7 @@ const setupTutor = (data) => {
             <div class="feedback">
               <h3>Feedback</h3>
               <div class="feedback">
-
+                <li>${tutor.feedback}</li>
               </div>
             </div>
           </div>
@@ -213,7 +213,7 @@ const setupTutor = (data) => {
               </div>
               <div class="schedule">
                   <h3>Available Schedule</h3>
-                  
+                  <li>${tutor.schedule}</li>
               </div>
               <div class="request-tutor-btn">
                 <button class="btn modal-open" data-modal="modal1">Request Tutor</button>
