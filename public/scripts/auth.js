@@ -20,11 +20,11 @@ db.settings({ timestampsInSnapshots: true });
 //get data
 db.collection('TutorRegistration').get().then(snapshot => {
     setupTutor(snapshot.docs);
-    snapshot.docs.forEach(doc => {
-        db.collection('TutorRegistration').doc(doc.id).collection('RateFeedback').get().then(snapshot => {
-                ratefeedback(snapshot.docs);
-        });
-    });
+    // snapshot.docs.forEach(doc => {
+    //     db.collection('TutorRegistration').doc(doc.id).collection('RateFeedback').get().then(snapshot => {
+    //             ratefeedback(snapshot.docs);
+    //     });
+    // });
 });
 
 
@@ -82,5 +82,15 @@ loginForm.addEventListener('submit', (e) => {
         //reset the form
         loginForm.reset();
         alert("You are signed in!")
+
+        $('#login-register').hide();
+        $('#home-section').hide();
+        $('#tutor-section').hide();
+        $('#student-profile').show();
+        $('#teachMaterial-section').hide();
+    
+        window.location.hash = "#student-profile";
+        
     })
+    
 })

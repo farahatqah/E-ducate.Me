@@ -1,17 +1,19 @@
+
+
 // sign-up and sign-in page
 const container = document.getElementById('container');
 const signIn = document.getElementById('sign-in');
 const signUp = document.getElementById('sign-up');
-
+            
 setTimeout(() => {
   container.classList.add('sign-in');
 },200);
-
+            
 const toggle = () => {
   container.classList.toggle('sign-in');
   container.classList.toggle('sign-up');
 };
-
+            
 signIn.addEventListener("click",toggle);
 signUp.addEventListener("click",toggle);
 
@@ -116,11 +118,11 @@ const updateDetails = (user) => {
 
               studentName: updDetailsForm['name'].value,
               studentContactNo: updDetailsForm['contactNo'].value
-             
             }).then(() => {
                 updDetailsForm.reset();
                 document.location.reload(true);
                 alert("Your details have been updated!")
+
             }).catch(err => {
               console.log(err);
             });
@@ -160,9 +162,10 @@ const setupUI = (user) => {
 const tutorList = document.querySelector('.display-tutor');
 
 const setupTutor = (data) => {
+  
   let html = '';
+  
   data.forEach(doc => {
-    
     const tutor = doc.data();
     const div = `
       <div class="accordian-list">
@@ -197,7 +200,9 @@ const setupTutor = (data) => {
             </div>
             <div class="feedback">
               <h3>Feedback</h3>
+              <div class="feedback">
 
+              </div>
             </div>
           </div>
           <div class="divider"></div>
@@ -208,9 +213,7 @@ const setupTutor = (data) => {
               </div>
               <div class="schedule">
                   <h3>Available Schedule</h3>
-                  <li>Tuesday</li>
-                  <li>Thursday</li>
-                  <li>Friday</li>
+                  
               </div>
               <div class="request-tutor-btn">
                 <button class="btn modal-open" data-modal="modal1">Request Tutor</button>
@@ -218,9 +221,9 @@ const setupTutor = (data) => {
           </div>        
         </div>
       </div>
-      
     `;
     html += div
+    console.log(html);
 
   });
   tutorList.innerHTML = html;
@@ -252,18 +255,19 @@ const setupTutor = (data) => {
   // console.log(tutorList)
 }
 
-// const commentList = document.querySelector('.feedback');
+//rate feedback tutor
+const commentList = document.querySelector('.feedback');
 
-// const ratefeedback = (data) => {
-//   let display = '';
-//   data.forEach(doc => {
-//     const fb = doc.data();
-//     const li = `<li>${fb.comment}</li>`;
-//     display += li
-//     console.log(display)
-//   });
-//   commentList.innerHTML = display;  
-// }
+const ratefeedback = (data) => {
+  let display = '';
+  data.forEach(doc => {
+    const fb = doc.data();
+    const li = `<li>${fb.comment}</li>`;
+    display += li
+  });
+  commentList.innerHTML = display;  
+  console.log(commentList)
+}
 
 //request tutor form
 requestTutor = (user) => {
@@ -282,6 +286,7 @@ requestTutor = (user) => {
             time: requestTutorForm['choosenTime'].value
           }).then(()=> {
             requestTutorForm.reset();
+            alert("Check your profile now")
           }).catch(err => {
             console.log(err);
           });
@@ -298,13 +303,10 @@ requestTutor = (user) => {
         const teachingsubj = `<li>${doc.data().teachingSubj}</li>`;
         teacher_name.innerHTML = teacherName;
         teach_subj.innerHTML = teachingsubj;
-      })
-    })
-  
+      });
+    });
   }
   else{
 
   }
 }
-
-//search bar function
